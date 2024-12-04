@@ -1,0 +1,34 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: ggnm01
+service: fastapi-lambda
+provider:
+  name: aws
+  runtime: python3.10
+  region: eu-west-2
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - logs:CreateLogGroup
+            - logs:CreateLogStream
+            - logs:PutLogEvents
+          Resource: arn:aws:logs:*:*:*
+
+functions:
+  app:
+    handler: app.handler
+    layers:
+     - arn:aws:lambda:eu-west-2:730335184998:layer:lxml-layer:7
+    events:
+      - httpApi: # Use HTTP API Gateway (cheaper than REST API Gateway)
+          path: /
+          method: POST
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    fileName: requirements.txt
+    dockerizePip: True
