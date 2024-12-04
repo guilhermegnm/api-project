@@ -131,6 +131,18 @@ def get_nutrition(soup):
 
 
 # 2.8. Dropdown blocks
+def get_advice_use(soup):
+    string = '//*[@id="start-of-content"]/div[2]/div/div[1]/div[1]/fieldset[1]/main/div/div/dl/span/dd/text()'
+    return etree.HTML(str(soup)).xpath(string)[0]
+def get_advice_keep(soup):
+    string = '//*[@id="start-of-content"]/div[2]/div/div[1]/div[1]/fieldset[2]/main/div/p/span//text()'
+    return etree.HTML(str(soup)).xpath(string)
+def get_advice_origin(soup):
+    string = '//*[@id="start-of-content"]/div[2]/div/div[1]/div[1]/fieldset[3]/main/div/div/p/span//text()'
+    return etree.HTML(str(soup)).xpath(string)
+def get_advice_contact(soup):
+    string = '//*[@id="start-of-content"]/div[2]/div/div[1]/div[1]/fieldset[4]/main/div/div/address/div//text()'
+    return etree.HTML(str(soup)).xpath(string)
 
 
 # 3.1. Wrap up everything
@@ -161,6 +173,11 @@ def get_item(url):
             "ingredients": safe_call(get_ingredients, soup),
             # 7. Nutrition
             "nutrition": safe_call(get_nutrition, soup),
+            # 8. Dropdown blocks
+            "use": safe_call(get_advice_use, soup),
+            "keep": safe_call(get_advice_keep, soup),
+            "origin": safe_call(get_advice_origin, soup),
+            "contact": safe_call(get_advice_contact, soup),
         }.items() if value is not None}
 
     return item_dict
