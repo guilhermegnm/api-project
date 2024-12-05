@@ -131,18 +131,47 @@ def get_nutrition(soup):
 
 
 # 2.8. Dropdown blocks
-def get_advice_use(soup):
-    string = '//*[@id="start-of-content"]/div[2]/div/div[1]/div[1]/fieldset[1]/main/div/div/dl/span/dd/text()'
-    return etree.HTML(str(soup)).xpath(string)[0]
-def get_advice_keep(soup):
-    string = '//*[@id="start-of-content"]/div[2]/div/div[1]/div[1]/fieldset[2]/main/div/p/span//text()'
-    return etree.HTML(str(soup)).xpath(string)
-def get_advice_origin(soup):
-    string = '//*[@id="start-of-content"]/div[2]/div/div[1]/div[1]/fieldset[3]/main/div/div/p/span//text()'
-    return etree.HTML(str(soup)).xpath(string)
-def get_advice_contact(soup):
-    string = '//*[@id="start-of-content"]/div[2]/div/div[1]/div[1]/fieldset[4]/main/div/div/address/div//text()'
-    return etree.HTML(str(soup)).xpath(string)
+def rename_keys_with_mapping(input_dict, mapping):
+    # Filter the mapping to keep only keys present in the input dictionary
+    filtered_mapping = {new_key: old_key for new_key, old_key in mapping.items() if old_key in input_dict}
+
+    # Create a new dictionary with the filtered and renamed keys
+    return {new_key: input_dict[old_key] for new_key, old_key in filtered_mapping.items()}
+
+def get_dropdowns(soup):
+
+    string = '//*[@id="start-of-content"]/div[2]/div/div[1]/div[1]/fieldset//text()'
+    data = etree.HTML(str(soup)).xpath(string)
+    keys = {'Gebruik', 'Bewaren', 'Herkomst', 'Contactgegevens'}
+
+    result = {}
+    current_key = None
+    buffer = []
+
+    for line in data:
+        if line in keys:
+            if current_key:
+                result[current_key] = ' '.join(buffer).strip()
+            current_key = line
+            buffer = []
+        else:
+            buffer.append(line)
+    
+    # Add the last accumulated section
+    if current_key:
+        result[current_key] = ' '.join(buffer).strip()
+
+    result = rename_keys_with_mapping(
+        result,
+        {
+            "use": "Gebruik",
+            "keep": "Bewaren",
+            "origin": "Herkomst",
+            "contact": "Contactgegevens"
+        })
+        
+    
+    return result
 
 
 # 3.1. Wrap up everything
@@ -174,10 +203,7 @@ def get_item(url):
             # 7. Nutrition
             "nutrition": safe_call(get_nutrition, soup),
             # 8. Dropdown blocks
-            "use": safe_call(get_advice_use, soup),
-            "keep": safe_call(get_advice_keep, soup),
-            "origin": safe_call(get_advice_origin, soup),
-            "contact": safe_call(get_advice_contact, soup),
+            "dropdowns": safe_call(get_dropdowns, soup),
         }.items() if value is not None}
 
     return item_dict

@@ -121,7 +121,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-eu-west-2-338a206b-55d8",
-                "S3Key": "serverless/fastapi-lambda/dev/1732643021209-2024-11-26T17:43:41.209Z/fastapi-lambda.zip"
+                "S3Key": "serverless/fastapi-lambda/dev/1733350970772-2024-12-04T22:22:50.772Z/fastapi-lambda.zip"
               },
               "Handler": "app.handler",
               "Runtime": "python3.10",
@@ -142,14 +142,14 @@
               "AppLogGroup"
             ]
           },
-          "AppLambdaVersionWr5T8AA9CK8tBUdATuYoKGMX63iagLqKcV8yH23ww": {
+          "AppLambdaVersionDho3y1IgN4OxLbimJB9G6XIQk8CGjqCRNq93cHODmw": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "DKAPCXxHiJLAOduFXi4hW9ZgoIh+ClF32f9RmD+zcMA="
+              "CodeSha256": "HbGwlTMlIH/QtUvN43uxYy1UHT0fjKVPOvpFSDAtT88="
             }
           },
           "HttpApi": {
@@ -255,7 +255,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersionWr5T8AA9CK8tBUdATuYoKGMX63iagLqKcV8yH23ww"
+              "Ref": "AppLambdaVersionDho3y1IgN4OxLbimJB9G6XIQk8CGjqCRNq93cHODmw"
             },
             "Export": {
               "Name": "sls-fastapi-lambda-dev-AppLambdaFunctionQualifiedArn"
@@ -331,7 +331,7 @@
         "timeout": 6,
         "runtime": "python3.10",
         "vpc": {},
-        "versionLogicalId": "AppLambdaVersionWr5T8AA9CK8tBUdATuYoKGMX63iagLqKcV8yH23ww"
+        "versionLogicalId": "AppLambdaVersionDho3y1IgN4OxLbimJB9G6XIQk8CGjqCRNq93cHODmw"
       }
     },
     "configValidationMode": "warn",
@@ -359,7 +359,7 @@
     "artifact": "/Users/guilhermemonteiro/vscode_projects/fastapi-lambda/.serverless/fastapi-lambda.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/fastapi-lambda/dev/1732643021209-2024-11-26T17:43:41.209Z",
+    "artifactDirectoryName": "serverless/fastapi-lambda/dev/1733350970772-2024-12-04T22:22:50.772Z",
     "artifact": "fastapi-lambda.zip"
   }
 }

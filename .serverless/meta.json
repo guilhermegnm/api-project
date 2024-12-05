@@ -1,7 +1,7 @@
 {
   "/Users/guilhermemonteiro/vscode_projects/fastapi-lambda": {
     "versionSfCore": null,
-    "versionFramework": "4.4.12",
+    "versionFramework": "4.4.14",
     "isWithinCompose": false,
     "isCompose": false,
     "composeOrgName": null,
@@ -136,7 +136,7 @@
                     "Properties": {
                       "Code": {
                         "S3Bucket": "serverless-framework-deployments-eu-west-2-338a206b-55d8",
-                        "S3Key": "serverless/fastapi-lambda/dev/1732643021209-2024-11-26T17:43:41.209Z/fastapi-lambda.zip"
+                        "S3Key": "serverless/fastapi-lambda/dev/1733350970772-2024-12-04T22:22:50.772Z/fastapi-lambda.zip"
                       },
                       "Handler": "app.handler",
                       "Runtime": "python3.10",
@@ -157,14 +157,14 @@
                       "AppLogGroup"
                     ]
                   },
-                  "AppLambdaVersionWr5T8AA9CK8tBUdATuYoKGMX63iagLqKcV8yH23ww": {
+                  "AppLambdaVersionDho3y1IgN4OxLbimJB9G6XIQk8CGjqCRNq93cHODmw": {
                     "Type": "AWS::Lambda::Version",
                     "DeletionPolicy": "Retain",
                     "Properties": {
                       "FunctionName": {
                         "Ref": "AppLambdaFunction"
                       },
-                      "CodeSha256": "DKAPCXxHiJLAOduFXi4hW9ZgoIh+ClF32f9RmD+zcMA="
+                      "CodeSha256": "HbGwlTMlIH/QtUvN43uxYy1UHT0fjKVPOvpFSDAtT88="
                     }
                   },
                   "HttpApi": {
@@ -273,7 +273,7 @@
                   "AppLambdaFunctionQualifiedArn": {
                     "Description": "Current Lambda function version",
                     "Value": {
-                      "Ref": "AppLambdaVersionWr5T8AA9CK8tBUdATuYoKGMX63iagLqKcV8yH23ww"
+                      "Ref": "AppLambdaVersionDho3y1IgN4OxLbimJB9G6XIQk8CGjqCRNq93cHODmw"
                     },
                     "Export": {
                       "Name": "sls-fastapi-lambda-dev-AppLambdaFunctionQualifiedArn"
@@ -339,7 +339,7 @@
                 "timeout": 6,
                 "runtime": "python3.10",
                 "vpc": {},
-                "versionLogicalId": "AppLambdaVersionWr5T8AA9CK8tBUdATuYoKGMX63iagLqKcV8yH23ww"
+                "versionLogicalId": "AppLambdaVersionDho3y1IgN4OxLbimJB9G6XIQk8CGjqCRNq93cHODmw"
               }
             },
             "plugins": [
@@ -498,7 +498,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-eu-west-2-338a206b-55d8",
-                  "S3Key": "serverless/fastapi-lambda/dev/1732643021209-2024-11-26T17:43:41.209Z/fastapi-lambda.zip"
+                  "S3Key": "serverless/fastapi-lambda/dev/1733350970772-2024-12-04T22:22:50.772Z/fastapi-lambda.zip"
                 },
                 "Handler": "app.handler",
                 "Runtime": "python3.10",
@@ -519,14 +519,14 @@
                 "AppLogGroup"
               ]
             },
-            "AppLambdaVersionWr5T8AA9CK8tBUdATuYoKGMX63iagLqKcV8yH23ww": {
+            "AppLambdaVersionDho3y1IgN4OxLbimJB9G6XIQk8CGjqCRNq93cHODmw": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "AppLambdaFunction"
                 },
-                "CodeSha256": "DKAPCXxHiJLAOduFXi4hW9ZgoIh+ClF32f9RmD+zcMA="
+                "CodeSha256": "HbGwlTMlIH/QtUvN43uxYy1UHT0fjKVPOvpFSDAtT88="
               }
             },
             "HttpApi": {
@@ -635,7 +635,7 @@
             "AppLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "AppLambdaVersionWr5T8AA9CK8tBUdATuYoKGMX63iagLqKcV8yH23ww"
+                "Ref": "AppLambdaVersionDho3y1IgN4OxLbimJB9G6XIQk8CGjqCRNq93cHODmw"
               },
               "Export": {
                 "Name": "sls-fastapi-lambda-dev-AppLambdaFunctionQualifiedArn"
@@ -701,7 +701,7 @@
           "timeout": 6,
           "runtime": "python3.10",
           "vpc": {},
-          "versionLogicalId": "AppLambdaVersionWr5T8AA9CK8tBUdATuYoKGMX63iagLqKcV8yH23ww"
+          "versionLogicalId": "AppLambdaVersionDho3y1IgN4OxLbimJB9G6XIQk8CGjqCRNq93cHODmw"
         }
       },
       "plugins": [
@@ -721,7 +721,7 @@
     "options": {},
     "error": null,
     "params": {},
-    "machineId": "3f580a01d713dc828a19391682bc6315",
+    "machineId": "980ddd896ea1a8fe8d24b4b40b6273d5",
     "stage": "dev",
     "accessKeyV2": "<REDACTED>",
     "accessKeyV1": "<REDACTED>",
@@ -744,18 +744,18 @@
     "serviceProviderAwsCredentials": "<REDACTED>",
     "serviceProviderAwsAccountId": "730335184998",
     "projectType": "traditional",
-    "versionSf": "4.4.12",
+    "versionSf": "4.4.14",
     "serviceProviderAwsCfStackName": "fastapi-lambda-dev",
     "integrations": {},
     "serviceUniqueId": "arn:aws:cloudformation:eu-west-2:730335184998:stack/fastapi-lambda-dev/7ae47490-abfe-11ef-b34b-067749d52671",
     "serviceProviderAwsCfStackId": "arn:aws:cloudformation:eu-west-2:730335184998:stack/fastapi-lambda-dev/7ae47490-abfe-11ef-b34b-067749d52671",
     "serviceProviderAwsCfStackCreated": "2024-11-26T13:58:14.465Z",
-    "serviceProviderAwsCfStackUpdated": "2024-11-26T17:43:47.612Z",
+    "serviceProviderAwsCfStackUpdated": "2024-12-04T22:22:54.281Z",
     "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
         "OutputKey": "AppLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:eu-west-2:730335184998:function:fastapi-lambda-dev-app:14",
+        "OutputValue": "arn:aws:lambda:eu-west-2:730335184998:function:fastapi-lambda-dev-app:15",
         "Description": "Current Lambda function version",
         "ExportName": "sls-fastapi-lambda-dev-AppLambdaFunctionQualifiedArn"
       },
